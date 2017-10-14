@@ -28,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
             myBoundService = myLocalBinder.getService();
 
             isBound = true;
+
+            int value1 =Integer.valueOf(editTextValue1.getText().toString());
+            int value2 =Integer.valueOf(editTextValue2.getText().toString());
+
+            /// Example.......
+            myLocalBinder.add(value1,value2);
+
         }
 
         @Override
@@ -78,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         if (isBound){
             switch (view.getId()){
                 case R.id.buttonSum :
-                    result = myBoundService.add(value1,value2);
+                    result = myBoundService.addService(value1,value2);
                     break;
                 case R.id.buttonSub :
                     result = myBoundService.subtract(value1,value2);

@@ -18,12 +18,17 @@ public class MyBoundService extends Service {
         MyBoundService getService (){
             return MyBoundService.this;
         }
+
+        public int add(int value1 , int value2){
+            return addService(value1,value2);
+        }
+
     }
 
     MyLocalBinder myLocalBinder = new MyLocalBinder();
 
 
-    public int add(int a , int b){
+    public int addService(int a , int b){
         return a + b;
     }
 
